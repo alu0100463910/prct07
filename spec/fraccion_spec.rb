@@ -1,5 +1,5 @@
 require "fraccion.rb"
-require "rspec"
+#require "rspec"
 
 describe Fraccion do
   before :each do
@@ -9,8 +9,8 @@ describe Fraccion do
     @p4 = Fraccion.new(4,8)
   end 
   
-  describe "numerdor" do
-    it { @p1.should respond_to :numerdor }
+  describe "numerador" do
+    it { @p1.should respond_to :numerador }
   end
   
    describe "denominador" do
@@ -53,9 +53,9 @@ describe Fraccion do
   		@p4.reciprocal.should == Fraccion.new(2,1)
   	end
   end
-  describe "#Opuesto"
+  describe "#Opuesto" do
   	it "Se debe calcular el opuesto de una fraccion con - " do
-  		(-@p4).should == Fraccion.new(-2,1)
+  		(-@p4).should == Fraccion.new(-4,8)
   	end
   end
   
@@ -90,34 +90,36 @@ describe Fraccion do
   end
   
   describe "#Fraccion Menor" do
-		it "Se debe de poder comprobar si una fracion es menor que otra" do
+		it "Se debe de poder comprobar si una fraccion es menor que otra" do
 		  (@p4 < Fraccion.new(6,5)).should == true
 		end
   end
   
   describe "#Fraccion Mayor" do
-		it "Se debe de poder comprobar si una fracion es mayor que otra" do
+		it "Se debe de poder comprobar si una fraccion es mayor que otra" do
 		  (@p4 > Fraccion.new(6,5)).should == false
 		end
 	end
   
   describe "#Fraccion Menor Igual" do
-		it "Se debe de poder comprobar si una fracion es menor o igual que otra" do
+		it "Se debe de poder comprobar si una fraccion es menor o igual que otra" do
 		  (@p4 <= Fraccion.new(6,5)).should == true
 		end
 	end
   
   describe "#Fraccion Mayor Igual" do
-		it "Se debe de poder comprobar si una fracion es mayor o igual que otra" do
+		it "Se debe de poder comprobar si una fraccion es mayor o igual que otra" do
 		  (@p4 >= Fraccion.new(6,5)).should == false
 		end
   end
-  describe "#Valor Absoluto de dos Fracciones" do
+  
+    describe "#Valor Absoluto de dos Fracciones" do
 		it "Se debe multiplicar dos fracciones y devolver el valor absoluto" do
 		  valor = Fraccion.new(-1,2)*Fraccion.new(1,2)
 		  valor.abs.should == Fraccion.new(1,4)
 		end
   end
+
 end
 
    
